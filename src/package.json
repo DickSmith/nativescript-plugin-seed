@@ -20,13 +20,15 @@
     "plugin.tscwatch": "npm run tsc -- -w",
     "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
     "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
-    "clean": "rm -rf node_modules && cd ../demo && rm -rf hooks node_modules platforms && cd ../src && npm run plugin.link"
+    "clean": "rm -rf node_modules && cd ../demo && rm -rf hooks node_modules platforms && cd ../src && npm run plugin.link",
     "tns": "tns",
     "lint": "tslint --type-check --force --fix --project tsconfig.json",
-    "nuke": "rm -rf node_modules/ package-lock.json",
+    "nuke": "rm -rf node_modules/ package-lock.json ../demo/hooks ../demo/node_modules ../demo/platforms ../demo/package-lock.json",
     "nuki": "npm run nuke && npm i",
     "build": "npm run lint && tsc",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "demo.buildonly.ios": "npm i && npm run tsc && cd ../demo && tns build ios --syncAllFiles",
+    "typings.ios": "npm run nuki && pod repo update && TNS_TYPESCRIPT_DECLARATIONS_PATH=\"$(pwd)/typings\" npm run demo.buildonly.ios"
   },
   "repository": {
     "type": "git",
