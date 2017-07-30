@@ -19,3 +19,20 @@ demo/node_modules
 node_modules
 publish/src
 publish/package
+
+### Static .idea files to define subproject scopes
+!/src/.idea/src.iml
+!/src/.idea/typescript-compiler.xml
+!/demo/.idea/src.iml
+!/demo/.idea/typescript-compiler.xml
+###
+
+/demo/hooks/
+/src/package
+/src/*.tgz
+*.d.ts
+!/src/typings/*.d.ts
+!/src/references.d.ts
+!/demo/references.d.ts
+!/src/index.d.ts
+/out

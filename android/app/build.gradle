@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+}
+
+dependencies {
+//    compile 'GROUP:PACKAGE:VERSION'
+}
+
+task getDeps(type: Copy) {
+    from configurations.compile
+    into '../lib'
+}
